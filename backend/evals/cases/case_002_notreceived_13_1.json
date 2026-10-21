@@ -1,0 +1,31 @@
+{
+  "case_id": "case_002_notreceived",
+  "advocate_for": "consumer",
+  "difficulty": "clear",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 340.00, "currency": "USD"},
+    "transaction_date": "2026-09-01",
+    "filed_date": "2026-09-20",
+    "claim_text": "I ordered a pair of headphones on September 1 with delivery promised within a week. They never arrived. The tracking has never shown a delivery. The merchant insists it shipped but cannot show it was delivered to me."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "receipt", "source": "email", "timestamp": "2026-09-01T18:10:00Z",
+     "text": "Order confirmation: wireless headphones, USD 340.00, estimated delivery by 2026-09-08."},
+    {"evidence_id": "ev_002", "type": "tracking", "source": "carrier", "timestamp": "2026-09-19T00:00:00Z",
+     "text": "Tracking history: 'Label created 2026-09-02.' No further scans. Status never reached 'Delivered'."},
+    {"evidence_id": "ev_003", "type": "email", "source": "email", "timestamp": "2026-09-16T13:00:00Z",
+     "text": "Merchant support reply: 'Our records show it shipped.' Provides no proof of delivery; does not resolve the claim."}
+  ],
+  "labels": {
+    "reason_code": "13.1",
+    "contested_points": {
+      "13.1-r1": {"status": "consumer_supported", "satisfied_by": ["ev_002"]},
+      "13.1-r2": {"status": "not_applicable", "satisfied_by": []},
+      "13.1-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.1-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "fight",
+    "notes": "Clear case. Critical point 13.1-r1 is consumer-supported: tracking never shows delivery, and the merchant offers no proof of receipt. Burden is on the merchant to prove delivery; they cannot."
+  }
+}

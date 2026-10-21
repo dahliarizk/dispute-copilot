@@ -1,0 +1,34 @@
+{
+  "case_id": "case_008_notasdescribed",
+  "advocate_for": "consumer",
+  "difficulty": "clear",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 180.00, "currency": "USD"},
+    "transaction_date": "2026-09-05",
+    "filed_date": "2026-09-14",
+    "claim_text": "The listing said the jacket was 100% genuine leather. What arrived has a label reading 100% polyester. It is not the item described."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "listing_screenshot", "source": "store_page", "timestamp": "2026-09-05T10:00:00Z",
+     "text": "Product listing: 'Premium jacket, 100% genuine leather.'"},
+    {"evidence_id": "ev_002", "type": "receipt", "source": "email", "timestamp": "2026-09-05T10:05:00Z",
+     "text": "Order confirmation: 'Genuine leather jacket', USD 180.00."},
+    {"evidence_id": "ev_003", "type": "listing_screenshot", "source": "cardholder_photo", "timestamp": "2026-09-09T12:00:00Z",
+     "text": "Photo of the received item's care label: '100% polyester'."},
+    {"evidence_id": "ev_004", "type": "email", "source": "email", "timestamp": "2026-09-10T09:00:00Z",
+     "text": "Cardholder to merchant requesting a return; merchant declines and says all sales final."}
+  ],
+  "labels": {
+    "reason_code": "13.3",
+    "contested_points": {
+      "13.3-r1": {"status": "consumer_supported", "satisfied_by": ["ev_001", "ev_003"]},
+      "13.3-r2": {"status": "consumer_supported", "satisfied_by": ["ev_004"]},
+      "13.3-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.3-r4": {"status": "not_applicable", "satisfied_by": []},
+      "13.3-r5": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "fight",
+    "notes": "Clear case. Documented material mismatch on the critical point: listing says genuine leather (ev_001), received item's label says polyester (ev_003). Cardholder attempted to return (ev_004); merchant's all-sales-final policy does not defeat 13.3, which overrides refund policy."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "case_011_accreditation",
+  "advocate_for": "consumer",
+  "difficulty": "clear",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 399.00, "currency": "USD"},
+    "transaction_date": "2026-08-25",
+    "filed_date": "2026-09-12",
+    "claim_text": "I bought a professional certification course advertised as government-accredited. It is not accredited by anyone. I was misled about what I was buying."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "listing_screenshot", "source": "store_page", "timestamp": "2026-08-25T09:00:00Z",
+     "text": "Course sales page: 'Government-accredited certification, officially recognized.'"},
+    {"evidence_id": "ev_002", "type": "receipt", "source": "email", "timestamp": "2026-08-25T09:05:00Z",
+     "text": "Purchase confirmation: 'Accredited Professional Certification', USD 399.00."},
+    {"evidence_id": "ev_003", "type": "email", "source": "accrediting_body", "timestamp": "2026-09-08T10:00:00Z",
+     "text": "Reply from the named accrediting authority: 'We have no record of this provider or course; it is not accredited by us.'"}
+  ],
+  "labels": {
+    "reason_code": "13.5",
+    "contested_points": {
+      "13.5-r1": {"status": "consumer_supported", "satisfied_by": ["ev_001", "ev_003"]},
+      "13.5-r2": {"status": "consumer_supported", "satisfied_by": ["ev_001", "ev_003"]},
+      "13.5-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.5-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "fight",
+    "notes": "Clear misrepresentation. The sales page represented the course as government-accredited (ev_001); the named authority confirms it is not (ev_003). This is a misrepresentation of what was sold (accreditation status), not a quality complaint, so 13.5-r2 is consumer-supported."
+  }
+}

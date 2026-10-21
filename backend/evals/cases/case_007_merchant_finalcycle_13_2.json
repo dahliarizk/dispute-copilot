@@ -1,0 +1,31 @@
+{
+  "case_id": "case_007_merchant_finalcycle",
+  "advocate_for": "merchant",
+  "difficulty": "medium",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 120.00, "currency": "USD"},
+    "transaction_date": "2026-08-31",
+    "filed_date": "2026-09-10",
+    "claim_text": "Cardholder disputes a recurring charge, claiming it was billed after they cancelled."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "transaction", "source": "billing_system", "timestamp": "2026-08-31T00:00:00Z",
+     "text": "Charge USD 120.00 on 2026-08-31 for service period 2026-08-01 to 2026-08-31."},
+    {"evidence_id": "ev_002", "type": "email", "source": "email", "timestamp": "2026-08-20T09:00:00Z",
+     "text": "Cancellation confirmation: 'Your cancellation is effective 2026-08-31, the end of your current billing cycle.'"},
+    {"evidence_id": "ev_003", "type": "email", "source": "billing_system", "timestamp": "2026-09-01T07:00:00Z",
+     "text": "Usage report sent to cardholder: 14 logins and active use of the service during August 2026."}
+  ],
+  "labels": {
+    "reason_code": "13.2",
+    "contested_points": {
+      "13.2-r1": {"status": "merchant_supported", "satisfied_by": ["ev_001", "ev_002", "ev_003"]},
+      "13.2-r2": {"status": "merchant_supported", "satisfied_by": ["ev_002"]},
+      "13.2-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.2-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "fight",
+    "notes": "Merchant-side, medium. The charge was for the final billing cycle (August) used before the cancellation took effect on Aug 31 (ev_002), not a post-cancellation charge. ev_003 shows the service was actively used in that period. The 'services used in the final cycle' nuance is why it is medium, not clear."
+  }
+}

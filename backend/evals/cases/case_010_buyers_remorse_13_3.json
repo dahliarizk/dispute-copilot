@@ -1,0 +1,34 @@
+{
+  "case_id": "case_010_buyers_remorse",
+  "advocate_for": "consumer",
+  "difficulty": "medium",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 60.00, "currency": "USD"},
+    "transaction_date": "2026-09-12",
+    "filed_date": "2026-09-16",
+    "claim_text": "The rug is smaller than I pictured and the color isn't what I wanted. The store says all sales are final and won't take it back, so I'm disputing it as not as described."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "listing_screenshot", "source": "store_page", "timestamp": "2026-09-12T09:00:00Z",
+     "text": "Product listing with dimensions clearly stated (120 x 80 cm) and multiple accurate color photos."},
+    {"evidence_id": "ev_002", "type": "email", "source": "email", "timestamp": "2026-09-15T18:00:00Z",
+     "text": "Cardholder to merchant: 'It's smaller than I expected and the color isn't my taste.'"},
+    {"evidence_id": "ev_003", "type": "listing_screenshot", "source": "cardholder_photo", "timestamp": "2026-09-14T12:00:00Z",
+     "text": "Photo of the received rug: dimensions and color match the listing's stated size and photos."},
+    {"evidence_id": "ev_004", "type": "policy", "source": "merchant_terms", "timestamp": "2026-09-12T09:00:00Z",
+     "text": "Store return policy displayed at purchase: 'All sales final. No returns or exchanges.'"}
+  ],
+  "labels": {
+    "reason_code": "13.3",
+    "contested_points": {
+      "13.3-r1": {"status": "merchant_supported", "satisfied_by": ["ev_001", "ev_003"]},
+      "13.3-r2": {"status": "not_applicable", "satisfied_by": []},
+      "13.3-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.3-r4": {"status": "not_applicable", "satisfied_by": []},
+      "13.3-r5": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "accept",
+    "notes": "Introduces the 'accept' outcome, and a friendly-fraud pattern. The cardholder cannot return the rug (final-sale policy, ev_004), so they reframe buyer's remorse as 'not as described' to get around it. But the item matched its accurate listing: dimensions were stated (ev_001) and the received item matches them (ev_003), so the critical point favors the merchant. A closed return window does NOT convert remorse into a valid 13.3 claim. The tool should tell the cardholder they do not have a valid chargeback claim here (accept / do not pursue)."
+  }
+}

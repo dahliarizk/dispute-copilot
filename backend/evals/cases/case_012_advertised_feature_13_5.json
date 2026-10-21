@@ -1,0 +1,31 @@
+{
+  "case_id": "case_012_advertised_feature",
+  "advocate_for": "consumer",
+  "difficulty": "medium",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 250.00, "currency": "USD"},
+    "transaction_date": "2026-09-01",
+    "filed_date": "2026-09-16",
+    "claim_text": "I bought the premium fitness program because the sales page said it included weekly one-on-one coaching. After paying, there is no coaching - only prerecorded videos. The page appears to have been changed since, and I did not save a screenshot."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "receipt", "source": "email", "timestamp": "2026-09-01T10:00:00Z",
+     "text": "Purchase confirmation: 'Premium Fitness Program', USD 250.00. No feature breakdown in the receipt."},
+    {"evidence_id": "ev_002", "type": "email", "source": "email", "timestamp": "2026-09-14T16:00:00Z",
+     "text": "Cardholder to merchant: 'The sales page said premium included weekly 1-on-1 coaching when I bought it. There is no coaching, only prerecorded videos. Please refund.'"},
+    {"evidence_id": "ev_003", "type": "email", "source": "email", "timestamp": "2026-09-15T09:00:00Z",
+     "text": "Merchant reply: 'Coaching has never been included in this tier.' No copy of the sales page as it appeared at the time of purchase is provided."}
+  ],
+  "labels": {
+    "reason_code": "13.5",
+    "contested_points": {
+      "13.5-r1": {"status": "gap", "satisfied_by": []},
+      "13.5-r2": {"status": "consumer_supported", "satisfied_by": ["ev_002"]},
+      "13.5-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.5-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "insufficient",
+    "notes": "Medium, genuinely gatherable. The cardholder plausibly relied on an advertised feature (weekly 1-on-1 coaching) the premium tier does not deliver - a misrepresentation of what was sold, not a quality complaint, so 13.5-r2 is consumer-supported in nature. But the critical point is a gap: the cardholder has no proof the sales page made that claim (no screenshot), and the merchant's denial (ev_003) is an assertion, not proof of the original page. Unlike a dead case, this is gatherable - the original page can often be recovered from a web archive or cache, or the marketing email that made the claim. Honest output: insufficient, with a prompt to produce the original listing; if obtained, it would flip to fight."
+  }
+}

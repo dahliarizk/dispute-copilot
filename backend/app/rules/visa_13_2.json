@@ -1,0 +1,42 @@
+{
+  "code": "13.2",
+  "network": "visa",
+  "title": "Cancelled Recurring Transaction",
+  "category": "Consumer Disputes",
+  "claim_summary": "The cardholder asserts a recurring charge was billed after they cancelled, closed the account, or withdrew permission to charge.",
+  "response_deadline_days": 30,
+  "requirements": [
+    {
+      "id": "13.2-r1",
+      "description": "Proof the charge was valid: either an installment or one-off charge (not a recurring billing), or a charge for services used in the final billing cycle before the cancellation took effect.",
+      "accepted_evidence": ["transaction", "receipt", "policy", "email"],
+      "critical": true
+    },
+    {
+      "id": "13.2-r2",
+      "description": "Documentation of the cancellation terms and when the cancellation took effect, showing the charge preceded it.",
+      "accepted_evidence": ["policy", "email", "chat"],
+      "critical": false
+    },
+    {
+      "id": "13.2-r3",
+      "description": "If a refund was already issued, documentation showing the cardholder's account was credited.",
+      "accepted_evidence": ["transaction"],
+      "critical": false
+    },
+    {
+      "id": "13.2-r4",
+      "description": "If resolved directly with the cardholder, written correspondence showing they no longer wish to dispute the charge.",
+      "accepted_evidence": ["email", "chat"],
+      "critical": false
+    }
+  ],
+  "meta": {
+    "sources": [
+      "https://www.chargebackgurus.com/chargeback-reason-codes/visa/dispute-reason-code-13-2-consumer-disputes",
+      "https://bd.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf"
+    ],
+    "verified_on": "2026-10-18",
+    "note": "Summarized from a reputable secondary source aligned with Visa merchant dispute guidelines; cross-check against current Visa Core Rules or your acquirer before production use. Acquirers may set a shorter internal response deadline."
+  }
+}

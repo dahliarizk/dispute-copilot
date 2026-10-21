@@ -1,0 +1,48 @@
+{
+  "code": "13.3",
+  "network": "visa",
+  "title": "Not as Described or Defective Merchandise/Services",
+  "category": "Consumer Disputes",
+  "claim_summary": "The cardholder asserts the goods or services did not match the merchant's description, or arrived damaged or defective.",
+  "response_deadline_days": 30,
+  "requirements": [
+    {
+      "id": "13.3-r1",
+      "description": "A detailed rebuttal showing what was delivered matched its description and was not defective, addressing each of the cardholder's specific claims (a third-party opinion strengthens it).",
+      "accepted_evidence": ["listing_screenshot", "receipt", "email"],
+      "critical": true
+    },
+    {
+      "id": "13.3-r2",
+      "description": "Proof the cardholder did not attempt to return, exchange, or refuse delivery of the product.",
+      "accepted_evidence": ["tracking", "email", "chat"],
+      "critical": false
+    },
+    {
+      "id": "13.3-r3",
+      "description": "If applicable, proof the cardholder agreed to a repaired or replacement product and that it was delivered and received.",
+      "accepted_evidence": ["tracking", "email", "chat"],
+      "critical": false
+    },
+    {
+      "id": "13.3-r4",
+      "description": "If a refund was already issued, documentation showing the cardholder's account was credited.",
+      "accepted_evidence": ["transaction"],
+      "critical": false
+    },
+    {
+      "id": "13.3-r5",
+      "description": "If resolved directly with the cardholder, written correspondence showing they no longer wish to dispute the charge.",
+      "accepted_evidence": ["email", "chat"],
+      "critical": false
+    }
+  ],
+  "meta": {
+    "sources": [
+      "https://www.chargebackgurus.com/chargeback-reason-codes/visa/dispute-reason-code-13-3-consumer-disputes",
+      "https://bd.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf"
+    ],
+    "verified_on": "2026-10-18",
+    "note": "Liability cannot be deflected to the manufacturer, and this code overrides the merchant's refund policy. Summarized from a reputable secondary source aligned with Visa merchant dispute guidelines; cross-check against current Visa Core Rules or your acquirer before production use."
+  }
+}

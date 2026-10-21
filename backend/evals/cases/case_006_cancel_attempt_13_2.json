@@ -1,0 +1,31 @@
+{
+  "case_id": "case_006_cancel_attempt",
+  "advocate_for": "consumer",
+  "difficulty": "medium",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 45.00, "currency": "USD"},
+    "transaction_date": "2026-09-15",
+    "filed_date": "2026-09-19",
+    "claim_text": "I tried to cancel my subscription in August by emailing support, but I was charged again in September."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "transaction", "source": "statement", "timestamp": "2026-09-15T06:00:00Z",
+     "text": "Recurring charge USD 45.00 on 2026-09-15."},
+    {"evidence_id": "ev_002", "type": "email", "source": "email", "timestamp": "2026-08-10T11:00:00Z",
+     "text": "Cardholder to general support address: 'Please cancel my subscription.' No reply or confirmation on record."},
+    {"evidence_id": "ev_003", "type": "policy", "source": "merchant_terms", "timestamp": "2026-08-10T11:00:00Z",
+     "text": "Merchant cancellation terms: 'Cancellations must be submitted through the account dashboard at least 5 days before the renewal date. Email requests are not processed.'"}
+  ],
+  "labels": {
+    "reason_code": "13.2",
+    "contested_points": {
+      "13.2-r1": {"status": "contested", "satisfied_by": ["ev_002", "ev_003"]},
+      "13.2-r2": {"status": "gap", "satisfied_by": []},
+      "13.2-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.2-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "insufficient",
+    "notes": "Medium, sympathetic-but-weak. The cardholder attempted to cancel (ev_002) but not through the method the terms require and with no confirmation (ev_003), so there is no proof the cancellation validly took effect (r2 gap). The charge cannot be confidently shown invalid -> insufficient. Tests not overclaiming a win on a weak case."
+  }
+}

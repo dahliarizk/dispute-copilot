@@ -1,0 +1,42 @@
+{
+  "code": "13.5",
+  "network": "visa",
+  "title": "Misrepresentation",
+  "category": "Consumer Disputes",
+  "claim_summary": "The cardholder asserts the merchant substantially misrepresented what was sold — the product or service description was vague, inaccurate, or insufficient — and they were misled about the nature or terms of the purchase.",
+  "response_deadline_days": 30,
+  "requirements": [
+    {
+      "id": "13.5-r1",
+      "description": "Evidence the sales terms and description presented at purchase were accurate and not misleading, and that the merchant delivered what was represented.",
+      "accepted_evidence": ["listing_screenshot", "policy", "receipt", "email"],
+      "critical": true
+    },
+    {
+      "id": "13.5-r2",
+      "description": "Proof the complaint is about product quality rather than misrepresentation of the terms or nature of what was sold (the distinction between 13.5 and 13.3).",
+      "accepted_evidence": ["email", "policy"],
+      "critical": false
+    },
+    {
+      "id": "13.5-r3",
+      "description": "If a refund was already issued, documentation showing the cardholder's account was credited.",
+      "accepted_evidence": ["transaction"],
+      "critical": false
+    },
+    {
+      "id": "13.5-r4",
+      "description": "If resolved directly with the cardholder, written correspondence showing they no longer wish to dispute the charge.",
+      "accepted_evidence": ["email", "chat"],
+      "critical": false
+    }
+  ],
+  "meta": {
+    "sources": [
+      "https://www.chargebackgurus.com/chargeback-reason-codes/visa/dispute-reason-code-13-5-consumer-disputes",
+      "https://bd.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf"
+    ],
+    "verified_on": "2026-10-20",
+    "note": "Focuses on substantial misrepresentation of what was sold, not mere quality (which is 13.3). Supersedes the merchant's refund policy. Summarized from a reputable secondary source aligned with Visa merchant dispute guidelines; cross-check against current Visa Core Rules or your acquirer before production use."
+  }
+}

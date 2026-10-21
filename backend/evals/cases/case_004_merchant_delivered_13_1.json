@@ -1,0 +1,31 @@
+{
+  "case_id": "case_004_merchant_delivered",
+  "advocate_for": "merchant",
+  "difficulty": "clear",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 1250.00, "currency": "USD"},
+    "transaction_date": "2026-09-02",
+    "filed_date": "2026-09-22",
+    "claim_text": "Cardholder has filed a 'merchandise not received' dispute, claiming the order never arrived."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "receipt", "source": "order_system", "timestamp": "2026-09-02T12:00:00Z",
+     "text": "Order confirmation: office chairs x5, USD 1250.00, ship-to matches the cardholder's billing address."},
+    {"evidence_id": "ev_002", "type": "tracking", "source": "carrier", "timestamp": "2026-09-05T14:20:00Z",
+     "text": "Status: 'Delivered, signature captured: J. SMITH, 2026-09-05 14:20', delivered to the cardholder's address."},
+    {"evidence_id": "ev_003", "type": "chat", "source": "support", "timestamp": "2026-09-06T09:15:00Z",
+     "text": "Cardholder support chat: 'Order arrived, thanks' — sent one day after delivery, before the dispute was filed."}
+  ],
+  "labels": {
+    "reason_code": "13.1",
+    "contested_points": {
+      "13.1-r1": {"status": "merchant_supported", "satisfied_by": ["ev_002", "ev_003"]},
+      "13.1-r2": {"status": "not_applicable", "satisfied_by": []},
+      "13.1-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.1-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "fight",
+    "notes": "Merchant-side case (exercises the advocate parameter). Critical point 13.1-r1 is merchant-supported: signed delivery to the cardholder's address, plus the cardholder's own acknowledgement of receipt before filing. Strong representment; merchant should fight."
+  }
+}

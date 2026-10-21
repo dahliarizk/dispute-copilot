@@ -1,0 +1,32 @@
+{
+  "case_id": "case_009_defective_ambiguous",
+  "advocate_for": "consumer",
+  "difficulty": "hard",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 75.00, "currency": "USD"},
+    "transaction_date": "2026-08-20",
+    "filed_date": "2026-09-10",
+    "claim_text": "The blender stopped working after about two weeks. I think it was defective."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "listing_screenshot", "source": "store_page", "timestamp": "2026-08-20T10:00:00Z",
+     "text": "Product listing: countertop blender, standard 1-year manufacturer warranty."},
+    {"evidence_id": "ev_002", "type": "email", "source": "email", "timestamp": "2026-09-05T14:00:00Z",
+     "text": "Cardholder to merchant: 'It stopped turning on after two weeks.' No video, photo, or third-party assessment of the fault."},
+    {"evidence_id": "ev_003", "type": "email", "source": "email", "timestamp": "2026-09-06T11:00:00Z",
+     "text": "Merchant reply: 'Unit passed QA before shipping. This may be user error; here are troubleshooting steps and warranty contact.'"}
+  ],
+  "labels": {
+    "reason_code": "13.3",
+    "contested_points": {
+      "13.3-r1": {"status": "gap", "satisfied_by": []},
+      "13.3-r2": {"status": "consumer_supported", "satisfied_by": ["ev_002"]},
+      "13.3-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.3-r4": {"status": "not_applicable", "satisfied_by": []},
+      "13.3-r5": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "insufficient",
+    "notes": "Hard case. The critical point is a gap: a defective-merchandise claim requires proof of the defect (a photo, video, or third-party assessment), and the cardholder has provided only an unsupported assertion (ev_002). The merchant's generic 'passed QA' (ev_003) is batch-level, not unit-specific, so it does not affirmatively win the point either. Because a defect is potentially provable, the honest output is insufficient - the cardholder should gather proof of the defect and resubmit - rather than accept. Contrast case_010, where the merchant affirmatively proved a matching item (accept)."
+  }
+}

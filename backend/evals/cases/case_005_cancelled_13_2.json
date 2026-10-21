@@ -1,0 +1,31 @@
+{
+  "case_id": "case_005_cancelled",
+  "advocate_for": "consumer",
+  "difficulty": "clear",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 29.99, "currency": "USD"},
+    "transaction_date": "2026-09-15",
+    "filed_date": "2026-09-18",
+    "claim_text": "I cancelled my subscription on August 15 and received confirmation that there would be no further charges. I was charged again on September 15."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "email", "source": "email", "timestamp": "2026-08-15T16:00:00Z",
+     "text": "Merchant cancellation confirmation: 'Your subscription has been cancelled effective 2026-08-15. You will not be charged again.'"},
+    {"evidence_id": "ev_002", "type": "transaction", "source": "statement", "timestamp": "2026-09-15T06:00:00Z",
+     "text": "Recurring charge USD 29.99 on 2026-09-15, one month after the confirmed cancellation."},
+    {"evidence_id": "ev_003", "type": "email", "source": "email", "timestamp": "2026-09-16T10:00:00Z",
+     "text": "Cardholder to merchant after seeing the charge: 'I cancelled in August and have your confirmation; please reverse this.' No correction made."}
+  ],
+  "labels": {
+    "reason_code": "13.2",
+    "contested_points": {
+      "13.2-r1": {"status": "consumer_supported", "satisfied_by": ["ev_001", "ev_002"]},
+      "13.2-r2": {"status": "consumer_supported", "satisfied_by": ["ev_001"]},
+      "13.2-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.2-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "fight",
+    "notes": "Clear case. The disputed charge (ev_002, Sep 15) post-dates a confirmed cancellation effective Aug 15 (ev_001). The merchant cannot show the charge was a valid pre-cancellation or non-recurring charge."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "code": "13.1",
+  "network": "visa",
+  "title": "Merchandise/Services Not Received",
+  "category": "Consumer Disputes",
+  "claim_summary": "The cardholder asserts they did not receive the goods or services they paid for.",
+  "response_deadline_days": 30,
+  "requirements": [
+    {
+      "id": "13.1-r1",
+      "description": "Proof the merchandise was delivered (or made available for pickup), or the services were performed, on or by the agreed date and received by the cardholder.",
+      "accepted_evidence": ["tracking", "receipt", "email", "chat"],
+      "critical": true
+    },
+    {
+      "id": "13.1-r2",
+      "description": "If the agreed delivery or service date has not yet passed, documentation of the correct and accurate delivery/service schedule.",
+      "accepted_evidence": ["receipt", "email"],
+      "critical": false
+    },
+    {
+      "id": "13.1-r3",
+      "description": "If a refund was already issued, documentation showing the cardholder's account was credited.",
+      "accepted_evidence": ["transaction"],
+      "critical": false
+    },
+    {
+      "id": "13.1-r4",
+      "description": "If resolved directly with the cardholder, written correspondence showing they no longer wish to dispute the charge.",
+      "accepted_evidence": ["email", "chat"],
+      "critical": false
+    }
+  ],
+  "meta": {
+    "sources": [
+      "https://www.chargebackgurus.com/chargeback-reason-codes/visa/dispute-reason-code-13-1-consumer-disputes",
+      "https://bd.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf"
+    ],
+    "verified_on": "2026-10-18",
+    "note": "Summarized from a reputable secondary source aligned with Visa merchant dispute guidelines; cross-check against current Visa Core Rules or your acquirer before production use. Acquirers may set a shorter internal response deadline."
+  }
+}

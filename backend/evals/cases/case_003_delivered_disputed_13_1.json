@@ -1,0 +1,31 @@
+{
+  "case_id": "case_003_delivered_disputed",
+  "advocate_for": "consumer",
+  "difficulty": "hard",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 89.00, "currency": "USD"},
+    "transaction_date": "2026-09-08",
+    "filed_date": "2026-09-18",
+    "claim_text": "The tracking says my package was delivered, but I never received it. I was home that day. The shipping label is also missing my apartment number, so it may have gone to the wrong unit."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "receipt", "source": "email", "timestamp": "2026-09-08T10:00:00Z",
+     "text": "Order confirmation: shipping address '220 Maple St, Apt 4B'. Amount USD 89.00."},
+    {"evidence_id": "ev_002", "type": "tracking", "source": "carrier", "timestamp": "2026-09-10T15:40:00Z",
+     "text": "Status: 'Delivered, left at front door, 2026-09-10 15:40.' No signature and no delivery photo. Label address shows '220 Maple St' with no apartment number."},
+    {"evidence_id": "ev_003", "type": "email", "source": "email", "timestamp": "2026-09-11T09:00:00Z",
+     "text": "Cardholder to merchant: 'Nothing arrived. I was home all day. The label is missing my apartment number (4B).'"}
+  ],
+  "labels": {
+    "reason_code": "13.1",
+    "contested_points": {
+      "13.1-r1": {"status": "contested", "satisfied_by": ["ev_002", "ev_003"]},
+      "13.1-r2": {"status": "not_applicable", "satisfied_by": []},
+      "13.1-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.1-r4": {"status": "not_applicable", "satisfied_by": []}
+    },
+    "decision": "insufficient",
+    "notes": "Hard case. The critical point is genuinely contested: a delivery scan exists (leans merchant), but it lacks a signature or photo and the label is missing the apartment number (leans consumer). On balance the consumer's non-receipt claim is not strongly supported, so the honest output is 'insufficient' rather than overclaiming a win. Tests the system's willingness to NOT fight a weak case."
+  }
+}

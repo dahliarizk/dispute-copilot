@@ -1,0 +1,35 @@
+{
+  "case_id": "case_001_spain",
+  "advocate_for": "consumer",
+  "difficulty": "hard",
+  "dispute": {
+    "network": "visa",
+    "amount": {"value": 512.40, "currency": "EUR"},
+    "transaction_date": "2026-08-14",
+    "filed_date": "2026-08-21",
+    "claim_text": "I bought what was advertised as official skip-the-line entry tickets to the Alhambra. The booking page and confirmation described them as official monument entry. What I received was a voucher for a third-party guided walking tour that did not include entry to the monument. The seller presented itself as the official site. The purchase was not what was represented."
+  },
+  "evidence": [
+    {"evidence_id": "ev_001", "type": "listing_screenshot", "source": "booking_site", "timestamp": "2026-08-14T09:20:00Z",
+     "text": "Screenshot of the purchase page: 'Official Alhambra Skip-the-Line Entry Ticket — direct monument admission.' Official-looking branding and crest."},
+    {"evidence_id": "ev_002", "type": "receipt", "source": "email", "timestamp": "2026-08-14T09:22:00Z",
+     "text": "Booking confirmation: 'Official Alhambra entry ticket, 2 adults, 2026-08-16.' Amount EUR 512.40."},
+    {"evidence_id": "ev_003", "type": "email", "source": "email", "timestamp": "2026-08-15T11:05:00Z",
+     "text": "Delivery email: 'Your Alhambra Area Guided Walking Tour voucher. Note: external tour; monument entry not included.'"},
+    {"evidence_id": "ev_004", "type": "email", "source": "email", "timestamp": "2026-08-18T14:30:00Z",
+     "text": "Merchant reply to complaint: declines refund, cites 'strict no-refund policy' and EU consumer law; does not address the official-vs-third-party mismatch."},
+    {"evidence_id": "ev_005", "type": "listing_screenshot", "source": "review_site", "timestamp": "2026-08-19T08:00:00Z",
+     "text": "Screenshots of online reviews calling the company a scam that poses as official sites."}
+  ],
+  "labels": {
+    "reason_code": "13.5",
+    "contested_points": {
+      "13.5-r1": {"status": "consumer_supported", "satisfied_by": ["ev_001", "ev_002", "ev_003"]},
+      "13.5-r2": {"status": "consumer_supported", "satisfied_by": ["ev_001", "ev_003"]},
+      "13.5-r3": {"status": "not_applicable", "satisfied_by": []},
+      "13.5-r4": {"status": "consumer_supported", "satisfied_by": ["ev_004"]}
+    },
+    "decision": "fight",
+    "notes": "Hard case: sits on the 13.3/13.5 boundary. Classified 13.5 because the root wrong is misrepresentation of what was sold — the seller posed as the official vendor and represented 'official entry', then delivered a third-party tour — not a mere product-quality mismatch (which would be 13.3). Critical point 13.5-r1 strongly consumer-supported: listing + confirmation say 'official entry', delivery says 'tour, entry not included'. Merchant's no-refund policy and EU-law citation do not defeat 13.5 — the code supersedes merchant refund policy. ev_005 (reviews) is low-value color, deliberately not relied on for any point."
+  }
+}
