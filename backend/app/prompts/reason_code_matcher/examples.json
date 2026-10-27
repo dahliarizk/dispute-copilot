@@ -1,0 +1,22 @@
+[
+  {
+    "input": {"claim_text": "I paid for expedited shipping on a laptop but it never arrived; the tracking shows it was returned to sender and I was never refunded."},
+    "output": {"matched_code": "13.1", "confidence": 0.95, "reasoning": "The cardholder never received the goods."}
+  },
+  {
+    "input": {"claim_text": "I cancelled my gym membership in person and got a cancellation receipt, but they kept charging my card for two more months."},
+    "output": {"matched_code": "13.2", "confidence": 0.93, "reasoning": "Recurring charges continued after a confirmed cancellation."}
+  },
+  {
+    "input": {"claim_text": "The couch I received is a completely different color than the one pictured in the listing and arrived with a large tear in the fabric."},
+    "output": {"matched_code": "13.3", "confidence": 0.9, "reasoning": "What was delivered differs from the description and is damaged."}
+  },
+  {
+    "input": {"claim_text": "The investment seminar was advertised as taught by a licensed financial advisor, but the instructor has no license and it was just a sales pitch."},
+    "output": {"matched_code": "13.5", "confidence": 0.9, "reasoning": "The cardholder was misled about the nature of what was sold."}
+  },
+  {
+    "input": {"claim_text": "I bought a handbag listed as a genuine designer item, but it turned out to be a counterfeit."},
+    "output": {"matched_code": "13.5", "confidence": 0.68, "reasoning": "Misrepresented authenticity; borderline with 13.3 since the item also differs from its description."}
+  }
+]

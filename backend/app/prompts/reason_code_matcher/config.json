@@ -1,0 +1,5 @@
+{
+  "model": "claude-haiku-5-5",
+  "max_tokens": 500,
+  "version": "0.3.0"
+}

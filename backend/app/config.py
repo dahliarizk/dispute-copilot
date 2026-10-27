@@ -6,6 +6,7 @@ class Settings(BaseSettings):
 
     supabase_url: str
     supabase_key: str
+    anthropic_api_key: str | None = None
     app_env: str = "development"
 
 
